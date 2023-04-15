@@ -1,0 +1,15 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg" class="ionicon">
+ <title>People</title>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <circle fill="#f1f5f9" id="svg_1" r="72" cy="184" cx="152"/>
+  <path fill="#f1f5f9" id="svg_2" d="m234,296c-28.16,-14.3 -59.24,-20 -82,-20c-44.58,0 -136,27.34 -136,82l0,42l150,0l0,-16.07c0,-19 8,-38.05 22,-53.93c11.17,-12.68 26.81,-24.45 46,-34z"/>
+  <path fill="#f1f5f9" id="svg_3" d="m340,288c-52.07,0 -156,32.16 -156,96l0,48l312,0l0,-48c0,-63.84 -103.93,-96 -156,-96z"/>
+  <circle fill="#f1f5f9" id="svg_4" r="88" cy="168" cx="340"/>
+ </g>
+</svg>

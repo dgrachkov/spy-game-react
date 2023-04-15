@@ -1,0 +1,13 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg" class="ionicon">
+ <title>Time</title>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" stroke-width="32" stroke-miterlimit="10" stroke="#f1f5f9" fill="none" d="m256,64c-106,0 -192,86 -192,192s86,192 192,192s192,-86 192,-192s-86,-192 -192,-192z"/>
+  <path id="svg_2" d="m256,128l0,144l96,0" stroke-width="32" stroke-linejoin="round" stroke-linecap="round" stroke="#f1f5f9" fill="none"/>
+ </g>
+</svg>

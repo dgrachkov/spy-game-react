@@ -1,0 +1,12 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg" class="ionicon">
+ <title>Person</title>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path fill="#dc2626" id="svg_1" d="m256,256a112,112 0 1 0 -112,-112a112,112 0 0 0 112,112zm0,32c-69.42,0 -208,42.88 -208,128l0,64l416,0l0,-64c0,-85.12 -138.58,-128 -208,-128z"/>
+ </g>
+</svg>
