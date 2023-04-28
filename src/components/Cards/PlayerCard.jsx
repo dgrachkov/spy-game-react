@@ -10,7 +10,7 @@ const PlayerCard = ({name, title, img, nextPlayer}) => {
       onClick={() => nextPlayer(setPlayerCard(false))}
     >
       <div className='text-center'>
-        <div className='h-72 w-full card_background'
+        <div className='h-60 sm:h-72 w-full card_background'
           style={{ backgroundImage: `url(/location/places/${img}.jpg)` }}>
         </div>
         <h3 className='text-slate-100 font-medium text-base py-3'>

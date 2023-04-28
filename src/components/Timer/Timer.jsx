@@ -31,7 +31,7 @@ const Timer = ({time, isCounting, setIsCounting}) => {
   }
 
   return spyWon === false ? (
-    <div className='text-center mt-40 sm:mt-52'>
+    <div className='text-center mt-36 sm:mt-46'>
       <h1 className='text-slate-100 text-7xl sm:text-8xl font-semibold'>
         {minutes}:{seconds}
       </h1>
@@ -62,7 +62,7 @@ const Timer = ({time, isCounting, setIsCounting}) => {
       </div>
     </div>
   ) 
-  : <div className='text-center mt-40 sm:mt-52'>
+  : <div className='text-center mt-36 sm:mt-52'>
       <h1 className='text-red-700 font-semibold text-5xl'>
         Победил шпион...
       </h1>

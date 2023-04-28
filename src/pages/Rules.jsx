@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom'
 
 const Rules = () => {
   return (
-    <div className='h-full'>
-      <div className="max-w-3xl mx-auto px-3 py-12">
+    <div className='bg-[#18181b]'>
+      <div className="max-w-3xl mx-auto px-3 py-10">
         <div>
           <h1 className="text-slate-100 font-medium text-2xl text-center">Правила игры</h1>
-          <p className="mt-2 text-slate-100 text-base font-light text-center">
+          <p className="mt-3 text-slate-100 text-base font-light text-center">
             Задача каждого участника в игре — не раскрыть свою роль до конца раунда или первым раскрыть локацию других игроков. 
             Играть можно в компании от трех человек, но лучше всего подойдет для компании из большего количества участников.
           </p>

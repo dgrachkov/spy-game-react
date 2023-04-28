@@ -14,6 +14,7 @@ const App = () => {
   const [parameters, setParameters] = useState({
     name: `${locationName}`,
     time: 5,
+    spy: 2,
     players: [
       {
         id: 1, 
@@ -30,22 +31,73 @@ const App = () => {
         location: randomLocation,
         spy: false,
       },
+      {
+        id: 4, 
+        location: randomLocation,
+        spy: false,
+      },
     ],
   });
 
-  const randomSpy = parameters.players[Math.floor(Math.random()*parameters.players.length)];
-  randomSpy.spy = true;
+  const changeSpy = () => {
+    const currentSpy = Math.floor(Math.random() * parameters.players.length);
+  
+    setParameters({
+      ...parameters,
+      players: parameters.players.map((player, idx) => ({
+        ...player,
+        spy: idx === currentSpy,
+      })),
+    });
+  };
+
+  const changeParameters = (img, counter) => {
+    if (img === 'players') {
+      const newPlayers = [];
+
+      for (let i = 1; i <= counter; i++) {
+        newPlayers.push({
+          id: i, 
+          location: randomLocation,
+          spy: false,
+        });
+      }
+
+      const newParameters = {
+        ...parameters,
+        players: newPlayers
+      };
+      setParameters(newParameters);
+    }
+
+    if (img === 'spy') {
+      const newParameters = {
+        ...parameters,
+        spy: counter
+      };
+      setParameters(newParameters);
+    }
+
+    if (img === 'time') {
+      const newParameters = {
+        ...parameters,
+        time: counter
+      };
+      setParameters(newParameters);
+    }
+  }
 
   return (
-    <div className="App">
+    <div className="App h-full">
       <Navbar/>
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<Home changeSpy={changeSpy}/>}/>
         <Route path='/правила' element={<Rules/>}/>
         <Route 
           path='/настройки' 
           element={
-            <Settings 
+            <Settings
+              changeParameters={changeParameters}
               parameters={parameters} 
               setParameters={setParameters}
             />
@@ -54,7 +106,7 @@ const App = () => {
         <Route 
           path='/игра' 
           element={
-            <Game 
+            <Game
               randomLocation={randomLocation}
               parameters={parameters}
             />

@@ -19,8 +19,8 @@ const Game = ({randomLocation, parameters}) => {
   }
 
   return (
-    <div>
-      <div className='max-w-xl mx-auto px-3 mt-8'>
+    <div className='bg-[#18181b]'>
+      <div className='max-w-2xl mx-auto px-3 py-6'>
         {game
           ? <div>
               <h1 className='text-center py-4 text-slate-100 font-medium text-base sm:text-[17px]'>

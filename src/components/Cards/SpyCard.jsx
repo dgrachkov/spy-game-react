@@ -9,7 +9,7 @@ const PlayerCard = ({nextPlayer}) => {
       className='p-4 bg-zinc-800 rounded-lg cursor-pointer border border-red-700'
       onClick={() => nextPlayer(setPlayerCard(false))}
     >
-      <div className='flex justify-center items-center h-80'>
+      <div className='flex justify-center items-center h-60 sm:h-80'>
         <h1 className='text-red-700 font-semibold text-5xl'>
           Шпион
         </h1>
