@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
 import { getPadTime } from './getPadTime';
+import ViewLocation from './ViewLocation';
 
-const Timer = ({time, isCounting, setIsCounting}) => {
+const Timer = ({source, location, time, isCounting, setIsCounting}) => {
   const [timeLeft, setTimeLeft] = useState(time * 60);
   const [spyWon, setSpyWon] = useState(false); 
+  const [visibility, setVisibility] = useState(false);
 
   const minutes = getPadTime(Math.floor(timeLeft / 60));
   const seconds = getPadTime(timeLeft - minutes * 60);
@@ -62,10 +63,21 @@ const Timer = ({time, isCounting, setIsCounting}) => {
       </div>
     </div>
   ) 
-  : <div className='text-center mt-36 sm:mt-52'>
-      <h1 className='text-red-700 font-semibold text-5xl'>
-        Победил шпион...
+  : <div className='text-center mt-8'>
+      <h1 className='text-center text-red-700 font-semibold text-5xl'>
+        Победил шпион
       </h1>
+      <div>
+        <div className='flex justify-center mt-4'>
+          <button  
+            onClick={() => setVisibility(!visibility)}
+            className='block bg-zinc-700 duration-300 hover:bg-zinc-600 text-[14px] sm:text-base text-slate-100 py-3 px-4 rounded-lg'
+          >
+            Посмотреть локацию
+          </button>
+        </div>
+      </div>
+      <ViewLocation visibility={visibility} source={source} location={location}/>
       <div className='text-center mt-5'>
         <a href='/' className='text-zinc-100 text-base font-light'>
           На главное меню

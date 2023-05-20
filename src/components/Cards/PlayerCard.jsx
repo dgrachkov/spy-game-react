@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import MysteriousCard from './MysteriousCard';
 
-const PlayerCard = ({name, title, img, nextPlayer}) => {
+const PlayerCard = ({source, title, img, nextPlayer}) => {
   const [playerCard, setPlayerCard] = useState(false);
 
   return playerCard ? (
-    <div 
+    <div
       className='p-4 bg-zinc-800 rounded-lg cursor-pointer' 
       onClick={() => nextPlayer(setPlayerCard(false))}
     >
       <div className='text-center'>
-        <div className='h-60 sm:h-72 w-full card_background'
-          style={{ backgroundImage: `url(/location/places/${img}.jpg)` }}>
+        <div className='h-60 sm:h-72 w-full background'
+          style={{ backgroundImage: `url(/location/${source}/${img}.jpg)` }}>
         </div>
         <h3 className='text-slate-100 font-medium text-base py-3'>
           {title}

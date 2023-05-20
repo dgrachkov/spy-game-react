@@ -1,6 +1,6 @@
 import SettingsItem from "./SettingsItem"
 
-const SettingsList = ({parameters, changeParameters}) => {
+const SettingsList = ({parameters, changeParameters, changeLocation}) => {
   return (
     <ul className='mt-5'>
       <SettingsItem 
@@ -9,14 +9,15 @@ const SettingsList = ({parameters, changeParameters}) => {
         value={parameters.players.length}
       />
       <SettingsItem 
-        title='Шпионы' img='spy'
-        value={parameters.spy}
-        changeParameters={changeParameters}
-      />
-      <SettingsItem 
         title='Время' img='time'
         value={parameters.time}
         changeParameters={changeParameters}
+      />
+      <SettingsItem 
+        title='Локация' img='location'
+        value={parameters.locationName}
+        changeParameters={changeParameters}
+        changeLocation={changeLocation}
       />
     </ul>
   )

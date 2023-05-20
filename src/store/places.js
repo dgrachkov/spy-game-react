@@ -1,4 +1,5 @@
 export const places = {
+  name: 'Места',
   source: 'places',
   list : [
     { title: 'Казино', img: 'casino'},
@@ -7,6 +8,7 @@ export const places = {
     { title: 'Самолёт', img: 'plane'},
     { title: 'Отель', img: 'hotel'},
     { title: 'Закусочная', img: 'eatery'},
+    { title: 'Полицейский участок', img: 'police_station'},
     { title: 'Ресторан', img: 'restaurant'},
     { title: 'Транажёрный Зал', img: 'gym'},
     { title: 'Космическая Станция', img: 'space_station'},
@@ -23,7 +25,6 @@ export const places = {
     { title: 'Ночной Клуб', img: 'night_club'},
     { title: 'Спа-салон', img: 'spa'},
     { title: 'Школа', img: 'school'},
-    { title: 'Полицейский участок', img: 'police_station'},
     { title: 'Подводная лодка', img: 'submarine'},
     { title: 'Цирк', img: 'circus'},
     { title: 'Парк Развлечений', img: 'entertainment_park'},
@@ -41,5 +42,7 @@ export const places = {
     { title: 'Рок-концерт', img: 'rock_concert'},
     { title: 'Библиотека', img: 'library'},
     { title: 'Свадьба', img: 'wedding'},
+    { title: 'Банк', img: 'bank'},
+    { title: 'Психбольница', img: 'mental_hospital'},
   ],
 }

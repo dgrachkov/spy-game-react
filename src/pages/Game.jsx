@@ -28,7 +28,7 @@ const Game = ({randomLocation, parameters}) => {
               </h1>
               {player.spy === false
                 ? <PlayerCard
-                    name={parameters.name}
+                    source={parameters.locationSource}
                     title={randomLocation.title} 
                     img={randomLocation.img} 
                     nextPlayer={nextPlayer}
@@ -37,6 +37,8 @@ const Game = ({randomLocation, parameters}) => {
               }
             </div>
           : <Timer
+              source={parameters.locationSource}
+              location={randomLocation}
               time={parameters.time}
               isCounting={isCounting}
               setIsCounting={setIsCounting}

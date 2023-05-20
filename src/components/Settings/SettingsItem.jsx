@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import SettingsLocationItem from './SettingsLocationItem';
 
-const SettingsItem = ({title, value, img, changeParameters}) => {
+const SettingsItem = ({title, value, img, changeParameters, changeLocation}) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [settingParameters, setSettingParameters] = useState(false);
   const [counter, setCounter] = useState(value);
 
@@ -20,7 +22,7 @@ const SettingsItem = ({title, value, img, changeParameters}) => {
   return (
     <li 
       onClick={() => setSettingParameters(!settingParameters)}
-      className='bg-zinc-800 rounded-lg cursor-pointer py-2 mt-3 px-4 duration-300 hover:bg-zinc-700'>
+      className='bg-zinc-800 rounded-lg cursor-pointer py-3 mt-3 px-4'>
       <div className='flex items-center justify-between w-full'>
         <div className='flex items-center'>
           <img src={`/icons/${img}.svg`} className='w-10 h-10'/>
@@ -39,31 +41,39 @@ const SettingsItem = ({title, value, img, changeParameters}) => {
           }
         </div>
       </div>
-      {settingParameters && 
-        <div className='mt-2 pt-4 pb-2 w-full border-t border-zinc-600'>
-          <div className='flex items-center' onClick={e => e.stopPropagation()}>
-            <img 
-              src='/icons/left-arrow.svg'
-              className='w-6 h-6'
-              onClick={reduceCounter}
-            />
-            <h3 className='mx-3 text-slate-100 text-[17px] sm:text-lg font-medium'>
-              {counter}
-            </h3>
-            <img 
-              src='/icons/right-arrow.svg'
-              className='w-6 h-6'
-              onClick={increaseCounter}
-            />
-          </div>
-          <button 
-            onClick={() => confirmParameters(img, counter)}
-            className='mt-4 bg-zinc-500 text-slate-100 py-2 px-4 rounded-lg'>
-            Принять
-          </button>
-        </div>
+      {settingParameters &&
+        <>
+          {img === 'location'
+            ? <SettingsLocationItem 
+                setCurrentIndex={setCurrentIndex} 
+                currentIndex={currentIndex} 
+                changeLocation={changeLocation}
+              />
+            : <div className='mt-2 pt-4 pb-2 w-full border-t border-zinc-600'>
+                <div className='flex items-center' onClick={e => e.stopPropagation()}>
+                  <img 
+                    src='/icons/left-arrow.svg'
+                    className='w-6 h-6'
+                    onClick={reduceCounter}
+                  />
+                  <h3 className='mx-3 text-slate-100 text-[17px] sm:text-lg font-medium'>
+                    {counter}
+                  </h3>
+                  <img 
+                    src='/icons/right-arrow.svg'
+                    className='w-6 h-6'
+                    onClick={increaseCounter}
+                  />
+                </div>
+                <button 
+                  onClick={() => confirmParameters(img, counter)}
+                  className='mt-4 bg-zinc-600 text-slate-100 py-2 px-4 rounded-lg'>
+                  Принять
+                </button>
+              </div>
+          }
+        </>
       }
-      
     </li>
   )
 }

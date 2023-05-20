@@ -5,20 +5,21 @@ import Home from './pages/Home'
 import Rules from './pages/Rules'
 import Settings from './pages/Settings'
 import Game from './pages/Game'
-import { films } from './store/films'
+// import { store } from './store/films'
 import { places } from './store/places'
 
 const App = () => {
-  const [locationName, setLocationName] = useState(places.source);
-  const [randomLocation, setRandomLocation] = useState(places.list[Math.floor(Math.random()*places.list.length)]);
+  const [location, setLocation] = useState(places);
+  const [randomLocation, setRandomLocation] = useState(location.list[Math.floor(Math.random()*location.list.length)]);
   const [parameters, setParameters] = useState({
-    name: `${locationName}`,
-    time: 5,
-    spy: 2,
+    locationName: `${location.name}`,
+    locationSource: `${location.source}`,
+    time: 6,
+    spy: 1,
     players: [
       {
         id: 1, 
-        location: randomLocation,
+        playerLocation: randomLocation,
         spy: false,
       },
       {
@@ -33,6 +34,11 @@ const App = () => {
       },
       {
         id: 4, 
+        location: randomLocation,
+        spy: false,
+      },
+      {
+        id: 5, 
         location: randomLocation,
         spy: false,
       },
@@ -87,24 +93,33 @@ const App = () => {
     }
   }
 
+  const changeLocation = (a) => {
+    // setLocation(location)
+    const newParameters = {
+      ...parameters,
+      locationName: a.title
+    };
+    setParameters(newParameters)
+    console.log(parameters)
+  }
+
   return (
-    <div className="App h-full">
+    <div className="App h-full bg-[#18181b]">
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home changeSpy={changeSpy}/>}/>
         <Route path='/правила' element={<Rules/>}/>
-        <Route 
-          path='/настройки' 
+        <Route path='/настройки' 
           element={
             <Settings
               changeParameters={changeParameters}
               parameters={parameters} 
               setParameters={setParameters}
+              changeLocation={changeLocation}
             />
           }
         />
-        <Route 
-          path='/игра' 
+        <Route path='/игра' 
           element={
             <Game
               randomLocation={randomLocation}
